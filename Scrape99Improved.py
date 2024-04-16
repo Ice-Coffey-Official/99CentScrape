@@ -68,7 +68,7 @@ for c in cities:
         longitudes.append(s.getLongitude())
         cityNames.append(c.getCityName())
 
-df = DataFrame({'Store Name': store_names, 'Phone Number': phone_numbers, 'Address': addresses, 'Store Url': store_urls, 'Latitude': longitudes, 'Longitude': latitudes, 'City': cityNames})
+df = DataFrame({'Store Name': store_names, 'Phone Number': phone_numbers, 'Address': addresses, 'Store Url': store_urls, 'Latitude': latitudes, 'Longitude': longitudes, 'City': cityNames})
 
 with ExcelWriter(configuration.getSavePath()) as writer:  
     df.to_excel(writer, sheet_name=configuration.getSheetName(), index=configuration.isIndexed())
